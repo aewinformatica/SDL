@@ -1,0 +1,116 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title>Using SDL: Endian Independence</title>
+</head>
+
+<body bgcolor="#FFF8DC" text="#000000">
+<TABLE>
+<TR><!--#include file="../menu.tmpl" -->
+<TD>
+
+<p align="center">
+[<a href="usingtimers.html">Anterior</a>]
+<a href="toc.html"><font color="#8B0000">Conteúdo</font></a>
+</p>
+
+<h1><font color="#8B0000">Usando a API Simple DirectMedia Layer&nbsp;</font></h1>
+
+<h2>Independência na ordenação da memória</h2>
+
+<table border="0" cellpadding="4">
+    <tr>
+        <td valign="top"><ul>
+            <li><strong>Determinando a ordenação da memória do sistema</strong></li>
+        </ul>
+        <blockquote>
+            <p>O pré - processador do C define SDL_BYTEORDER tanto como
+            SDL_LIL_ENDIAN quanto como SDL_BIG_ENDIAN,dependendo da ordenação do
+            bytes do sistema atual.</p>
+            <p>Um sistema do tipo little endian que escreve dados em disco tem a
+            seguinte ordenação: <br>
+ &nbsp;&nbsp;&nbsp;&nbsp; [lo-bytes] [hi-bytes]
+            </p>
+            <p>Um sistema do tipo Big endian que escreve dados em disco tem a
+            seguinte ordenação: <br>
+ &nbsp;&nbsp;&nbsp;&nbsp; [hi-bytes] [lo-bytes]
+            </p>
+            <p> <br>
+            </p>
+        </blockquote>
+        </td>
+        <td valign="top" width="200" bgcolor="#D3D3D3"><strong>Dica:</strong><br>
+          Sistema x86 são little-endian enquanto PowerPC são big-endian. </td>
+    </tr>
+</table>
+
+<table border="0" cellpadding="50">
+    <tr>
+        <td valign="top"><font color="#000080"><strong>Exemplo</strong></font><strong>:</strong>
+        <pre>
+<font color="#0000FF">#include</font> &quot;<font color="#000000">SDL_endian.h</font>&quot;
+
+<font color="#0000FF">#if</font> SDL_BYTEORDER == SDL_LIL_ENDIAN
+<font color="#0000FF">#define</font> SWAP16(X)    (X)
+<font color="#0000FF">#define</font> SWAP32(X)    (X)
+<font color="#0000FF">#else</font>
+<font color="#0000FF">#define</font> SWAP16(X)    SDL_Swap16(X)
+<font color="#0000FF">#define</font> SWAP32(X)    SDL_Swap32(X)
+<font color="#0000FF">#endif</font>
+</pre>
+        </td>
+    </tr>
+</table>
+
+<table border="0" cellpadding="4">
+    <tr>
+        <td valign="top"><ul>
+            <li><b>Inverter dados em sistemas de ordenação diferente</b></li>
+        </ul>
+        <blockquote>
+            <p>SDL prove um conjunto de rápidas macros em SDL_endian.h,
+            SDL_Swap16() e SDL_Swap32(), os quais invertem a ordenação para você.Ha
+            também&nbsp; macros definidos que invertem dados de uma ordenação
+            em
+            particular para a ordenação do sistema local. </p>
+        </blockquote>
+        </td>
+        <td valign="top" width="200" bgcolor="#D3D3D3"><strong>Dica:</strong><br>
+          Se você somente precisa saber a ordenação de bytes do sistema atual,
+          mas não precisa de todas as funções e macros de inversão, inclua em
+          seu projeto SDL_byteorder.h ao invés de SDL_endian.h </td>
+    </tr>
+</table>
+
+<table border="0" cellpadding="50">
+    <tr>
+        <td valign="top"><font color="#000080"><strong>Exemplo</strong></font><strong>:
+        </strong><pre>
+<font color="#0000FF">#include</font> &quot;<font color="#000000">SDL_endian.h</font>&quot;
+
+<font color="#008000">void</font> ReadScanline16(FILE *file, <font
+color="#008000">Uint16 *</font>scanline, <font color="#008000">int</font> length)
+{
+    fread(scanline, length, sizeof(Uint16), file);
+    <font color="#0000FF">if</font> ( SDL_BYTEORDER == SDL_BIG_ENDIAN ) {
+        <font color="#008000">int</font> i;
+        <font color="#0000FF">for</font> ( i=length-1; i &gt;= 0; --i )
+            scanline[i] = SDL_SwapLE16(scanline[i]);
+    }
+}
+</pre>
+        </td>
+    </tr>
+</table>
+
+<p align="center">
+[<a href="usingtimers.html">Anterior</a>]
+<a href="toc.html"><font color="#8B0000">Conteúdo</font></a>
+</p>
+
+</TABLE>
+</body>
+</html>

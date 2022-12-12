@@ -1,0 +1,9 @@
+0 1 images/sky_black.bmp
+1 0 images/tree.bmp
+2 1 images/ground_black.bmp
+3 0
+4 0
+5 0
+6 0
+7 1 2800
+8 0

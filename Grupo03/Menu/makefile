@@ -1,0 +1,57 @@
+OPCOES = -Wall `sdl-config --cflags --libs` -lSDL_image -lSDL_ttf -lSDL_mixer -g
+OPCOESWIN = -Wall -lmingw32 -lSDLmain -lSDL -lSDL_image -lSDL_ttf -lSDL_mixer -g
+
+tudo: programa limpa
+
+programa: menu.o mouse.o compara.o colore.o clique.o main.o saves.o salva.o slot.o jogo3.o le_recordes.o recordes.o funcoes.o
+	gcc menu.o mouse.o compara.o colore.o clique.o main.o saves.o salva.o slot.o jogo3.o le_recordes.o recordes.o funcoes.o -o jogo $(OPCOES)
+
+windows: menu.o mouse.o compara.o colore.o clique.o main.o saves.o salva.o slot.o jogo3.o le_recordes.o recordes.o funcoes.o
+	gcc menu.o mouse.o compara.o colore.o clique.o main.o saves.o salva.o slot.o jogo3.o le_recordes.o recordes.o funcoes.o -o jogo $(OPCOESWIN)
+
+main.o: main.c meuinclude.h
+	gcc -c main.c $(OPCOES)
+
+menu.o: menu.c meuinclude.h
+	gcc -c menu.c $(OPCOES)
+	
+mouse.o: mouse.c meuinclude.h
+	gcc -c mouse.c $(OPCOES)
+	
+compara.o: compara.c meuinclude.h
+	gcc -c compara.c $(OPCOES)
+
+colore.o: colore.c meuinclude.h
+	gcc -c colore.c $(OPCOES)
+	
+#desenha_texto.o: desenha_texto.c meuinclude.h
+	#gcc -c desenha_texto.c $(OPCOES)
+	
+clique.o: clique.c meuinclude.h
+	gcc -c clique.c $(OPCOES)
+	
+saves.o: saves.c meuinclude.h
+	gcc -c saves.c $(OPCOES)
+	
+salva.o: salva.c meuinclude.h
+	gcc -c salva.c $(OPCOES)
+	
+slot.o: slot.c meuinclude.h
+	gcc -c slot.c $(OPCOES)
+
+funcoes.o: funcoes.c meuinclude.h
+	gcc -c funcoes.c $(OPCOES)
+	
+jogo3.o: jogo3.c meuinclude.h
+	gcc -c jogo3.c $(OPCOES)
+	
+le_recordes.o: le_recordes.c meuinclude.h
+	gcc -c le_recordes.c $(OPCOES)
+	
+recordes.o: recordes.c meuinclude.h
+	gcc -c recordes.c $(OPCOES)
+	
+limpa:
+	rm -rf *.o
+	
+reconstroi: limpa programa

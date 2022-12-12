@@ -1,0 +1,14 @@
+CHIEN 2D - v0.1 - c 2004,2005 Paulo V. W. Radtke
+
+Criação da classe ok - Aguardando início do sistema de vídeo
+Alocou a instância da Chien2DLite - pegaInstancia()
+Iniciando o modo de vídeo: 640x48032bpp
+A aplicação requisitou um modo em janela.
+A Chien2DLite vai verificar se o modo requisitado é válido.
+O sistema indica que o modo é suportado. Tenta iniciar.
+Modo de vídeo iniciado com sucesso!
+Apagando os azulejos e fontes do sistema.
+Encerrando a SDL
+Encerrou a SDL
+Vai apagar a instância da memória  - removeInstancia()
+Fechando o arquivo de log para encerrar a instância.

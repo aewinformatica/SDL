@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Bomber 1.5" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin\Debug\Bomber 1" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Debug\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="..\..\bibliotecas\SDL_ttf-devel-2.0.9-VC8\SDL_ttf-2.0.9\include" />
+					<Add directory="bibliotecas\SDL-devel-1.2.13-mingw32\include" />
+					<Add directory="bibliotecas\SDL_ttf-devel-2.0.9-VC8\SDL_ttf-2.0.9\include" />
+				</Compiler>
+				<Linker>
+					<Add library="..\..\bibliotecas\SDL_ttf-devel-2.0.9-VC8\SDL_ttf-2.0.9\lib\SDL_ttf.lib" />
+					<Add library="bibliotecas\SDL_ttf-devel-2.0.9-VC8\SDL_ttf-2.0.9\lib\SDL_ttf.lib" />
+					<Add library="bibliotecas\SDL-devel-1.2.13-mingw32\lib\libSDL.dll.a" />
+					<Add library="bibliotecas\SDL-devel-1.2.13-mingw32\lib\libSDLmain.a" />
+					<Add directory="..\..\bibliotecas\SDL_ttf-devel-2.0.9-VC8\SDL_ttf-2.0.9\lib" />
+					<Add directory="bibliotecas\SDL_ttf-devel-2.0.9-VC8\SDL_ttf-2.0.9\lib" />
+					<Add directory="bibliotecas\SDL-devel-1.2.13-mingw32\lib" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin\Release\Bomber 1" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add directory="C:\Documents and Settings\Wander\Meus documentos\Programas\bibliotecas\SDL-devel-1.2.13-mingw32\include" />
+		</Compiler>
+		<Linker>
+			<Add library="mingw32" />
+			<Add library="SDLmain" />
+			<Add library="SDL.dll" />
+			<Add library="user32" />
+			<Add library="gdi32" />
+			<Add library="winmm" />
+			<Add library="dxguid" />
+			<Add directory="C:\Documents and Settings\Wander\Meus documentos\Programas\bibliotecas\SDL-devel-1.2.13-mingw32\lib" />
+		</Linker>
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

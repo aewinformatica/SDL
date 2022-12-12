@@ -1,0 +1,17 @@
+void aoCriar_Dog(Tobj *o)
+{
+	PuleAleatorio(o);
+	redirect(o);
+	o->speed = 4;
+	o->z=1000;
+}
+
+void aoClock0_Dog(Tobj *o)
+{
+	Mova(o);
+	if (NaGrade(o,32))
+		redirect(o);
+	else
+		o->clock0 = 1;
+}
+

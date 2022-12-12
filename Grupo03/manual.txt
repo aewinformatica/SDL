@@ -1,0 +1,33 @@
+Informações Técnicas:
+---------------------
+
+Jogo: Kenny's 4th July Holyday
+Empresa: Falcatrua Games
+Gênero: Plataforma
+Classificação: 18+. Inclui questões sobre mortalidade e moralidade dúbia.
+
+Sinopse:
+    Kenny é um garoto do Colorado, nos Estados Unidos. Sua diversão no 4 de Julho, como todo bom americano, é soltar bombas.
+Só que Kenny é dotado de uma grande criatividade. Ele conseguiu bolar um mundo virtual onde existem inimigos, itens mágicos
+e bombas ilimitadas. Seu objetivo é achar uma saída de cada fase. Para tal, você deve destruir determinados tipos de blocos
+e evitar que seus inimigos encostem em você. Destruir eles é uma opção, mas não obrigatório. Tudo influencia na sua pontuação! É preciso inteligência e estratégia para usar o tempo e conseguir os itens desejados! Seja o primeiro colocado!
+
+Comandos:
+Setas direcionais: movimento do personagem.
+'B': Solta bomba na posição atual do personagem.
+'P': Ativa o "Pause"
+
+--------------------
+
+Manual do Programador:
+--------------------
+
+Programadores:
+     Felipe Guerreiro Barbosa Ruiz - DRE - 108056195
+     Gabriel Pires da Silva - DRE -108056014
+     Guilherme Carneiro Antonio - DRE - 108055602
+
+Considerações:
+     O jogo foi programado em C utilizando a biblioteca gráfica SDL e suas funcionalidades de som, gráficos e impressão de textos. O jogo em questão é uma versão do jogo Bomberman, da empresa Hudsoft, adaptada para o âmbito e para as necessidades dos integrantes do grupo.
+     Os arquivos fontes do jogo estão separados em diversos arquivos .c, e foram unidos utilizando makefile para concatenar os arquivos e conseguir um executável e um programa funcional.
+

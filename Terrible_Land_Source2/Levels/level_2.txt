@@ -1,0 +1,9 @@
+0 1 images/sunsetsky.bmp
+1 6 images/colleseum.bmp 500 800 850 975 1500 2200
+2 1 images/aquaduct.bmp
+3 1
+4 3 500 900 1500
+5 2 175	80 700 180
+6 3 400 1200 2200
+7 1 500
+8 1 2000

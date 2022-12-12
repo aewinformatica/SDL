@@ -1,0 +1,40 @@
+V.A.D. Project - 2 de Dezembro de 2008
+
+Manual do Usuário
+----------------------------------------
+
+1 - Instruções de Instalação e Requerimentos
+2 - Comandos do Jogo
+3 - Opções
+4 - Informações adicionais
+
+----------------------------------------
+
+	1 -  Instruções de Instalação e Requerimentos
+O jogo é disponibilizado em um arquivo compactado e não requer instalação, basta que os arquivos sejam extraídos do .ZIP respeitando os diretórios contidos no mesmo, e então rodar o binário para jogar.
+Configurações mínimas
+	-P3 1 GHz ou equivalente
+	-256MB de RAM no Windows XP
+----------------------------------------
+	2 - Comandos do Jogo
+O jogador controla a nave por meio do mouse. O Objetivo do jogo é destruir as bolas, capturando as bolas pequenas e disparando-as contra as grandes e médias. Para capturar as bolas pequenas, basta tocá-las com a nave e elas ficaram aderidas à mesma. Para dispará-las basta pressionar qualquer botão do mouse.
+Pressione ESC para terminar a partida.
+----------------------------------------
+	3 - Opções
+-Start Game - Inicia uma partida de jogo.
+-Options - Opções de configuração: nível de dificuldade, quantidade inicial de vidas e volume do áudio.
+-Exit - Fechar o jogo.
+-Highscores - Permite ver a lista dos jogadores que mais pontuaram.
+-Credits - Os desenvolvedores do jogo.
+----------------------------------------
+	4 - Informações adicionais
+O jogo foi desenvolvido em C com o uso da biblioteca multimídia SDL. Compilador usado foi o MinGW/GCC. Um .BAT compilador é fornecido.
+O código é totalmente open-source, ou seja seu código é livre e deverá permanecer livre. Caso seja feita qualquer modificação, pedimos que o código-fonte original seja disponibilizado, e que seja mantida licença open-source.
+
+Autores:
+	André Luiz Figueiredo de Albuquerque
+	Daniel Martins Antunes
+	Vitor Pereira Machado
+Agradecimentos:
+	Prof. Adriano Joaquim de Oliveira Cruz (UFRJ/NCE)
+	Bruno Bottino Ferreira (a.k.a. Tinnus)

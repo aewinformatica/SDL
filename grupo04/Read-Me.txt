@@ -1,0 +1,40 @@
+V.A.D. Project - December 2, 2008
+
+User's Manual
+----------------------------------------
+
+1 - Installation Instructions and Requirements
+2 - Controls
+3 - Options
+4 - Additional Information
+
+----------------------------------------
+
+	1 -  Installation Instructions and Requirements
+The game is available as a compacted file, and doesn't require an installation. All you have to do is extract the files contained in the .ZIP (maintaining the directory trees), and then execute the binary to play.
+Minimal Configurations
+	-P3 1 GHz or equivalent
+	-256MB RAM for Windows XP
+----------------------------------------
+	2 - Controls
+The player controls the spaceship using the mouse. The objective of the game is to destroy the balls, capturing the smaller ones and shooting them against the big or medium sized ones. To capture balls all you have to do is touch them, and they will adhere to the ship. To shoot press any mouse button.
+Press ESC to end the match.
+----------------------------------------
+	3 - Options
+-Start Game - Starts a new match.
+-Options - Configuration options: difficulty level, how many lives to start with, and audio volume.
+-Exit - Exits the game.
+-Highscores - See the highest scores so far.
+-Credits - The developers.
+----------------------------------------
+	4 - Additional Information
+The game was developed in C and with the SDL multimedia library. The compiler used was MinGW/GCC. A .BAT compiler line is available.
+The source code is open-source in its entirety, that is, it's code is free and shall remain free. In case any modification is made, we ask the original source-code to be supplied, and that the license remains open-source.
+
+Authors:
+	André Luiz Figueiredo de Albuquerque
+	Daniel Martins Antunes
+	Vitor Pereira Machado
+Thanks:
+	Prof. Adriano Joaquim de Oliveira Cruz (UFRJ/NCE)
+	Bruno Bottino Ferreira (a.k.a. Tinnus)

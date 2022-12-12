@@ -1,0 +1,74 @@
+# depslib dependency file v1.0
+1215157485 source:c:\documents and settings\igor\desktop\ufrj\comp1\jogo\bomberman\eventos.c
+	"includes.h"
+
+1214959412 c:\documents and settings\igor\desktop\ufrj\comp1\jogo\bomberman\includes.h
+	<SDL.h>
+	<time.h>
+	<stdio.h>
+	<stdlib.h>
+	<SDL_ttf.h>
+	<SDL_image.h>
+	<SDL_mixer.h>
+	"constantes.h"
+	"structs.h"
+	"globais.h"
+	"prototipos.h"
+
+1215119016 c:\documents and settings\igor\desktop\ufrj\comp1\jogo\bomberman\constantes.h
+
+1215120643 c:\documents and settings\igor\desktop\ufrj\comp1\jogo\bomberman\structs.h
+
+1215151150 c:\documents and settings\igor\desktop\ufrj\comp1\jogo\bomberman\globais.h
+
+1215153479 c:\documents and settings\igor\desktop\ufrj\comp1\jogo\bomberman\prototipos.h
+
+1215157600 source:c:\documents and settings\igor\desktop\ufrj\comp1\jogo\bomberman\inicializacao.c
+	"includes.h"
+
+1215149614 source:c:\documents and settings\igor\desktop\ufrj\comp1\jogo\bomberman\bomberman.c
+	"includes.h"
+
+1215157276 source:c:\documents and settings\igor\desktop\ufrj\comp1\jogo\bomberman\tela.c
+	"includes.h"
+
+1215149379 source:c:\documents and settings\igor\desktop\ufrj\comp1\jogo\bomberman\jogo.c
+	"includes.h"
+
+1215618850 source:c:\documents and settings\igor\desktop\ufrj\comp1\jogo\bomberman\bomberman\eventos.c
+	"includes.h"
+
+1215399942 c:\documents and settings\igor\desktop\ufrj\comp1\jogo\bomberman\bomberman\includes.h
+	<SDL.h>
+	<time.h>
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<SDL_ttf.h>
+	<SDL_image.h>
+	<SDL_mixer.h>
+	"constantes.h"
+	"structs.h"
+	"globais.h"
+	"prototipos.h"
+
+1215584352 c:\documents and settings\igor\desktop\ufrj\comp1\jogo\bomberman\bomberman\constantes.h
+
+1215597414 c:\documents and settings\igor\desktop\ufrj\comp1\jogo\bomberman\bomberman\structs.h
+
+1215616685 c:\documents and settings\igor\desktop\ufrj\comp1\jogo\bomberman\bomberman\globais.h
+
+1215605200 c:\documents and settings\igor\desktop\ufrj\comp1\jogo\bomberman\bomberman\prototipos.h
+
+1215620987 source:c:\documents and settings\igor\desktop\ufrj\comp1\jogo\bomberman\bomberman\inicializacao.c
+	"includes.h"
+
+1215618240 source:c:\documents and settings\igor\desktop\ufrj\comp1\jogo\bomberman\bomberman\jogo.c
+	"includes.h"
+
+1215620719 source:c:\documents and settings\igor\desktop\ufrj\comp1\jogo\bomberman\bomberman\tela.c
+	"includes.h"
+
+1215617486 source:c:\documents and settings\igor\desktop\ufrj\comp1\jogo\bomberman\bomberman\bomberman.c
+	"includes.h"
+

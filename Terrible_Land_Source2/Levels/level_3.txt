@@ -1,0 +1,14 @@
+0 1 images/sky_futuristic.bmp
+1 5 images/tree_futuristic.bmp 500 800 1050 1600 2000
+2 1 images/ground_futuristic.bmp
+3 1
+4 1 500
+5 6 175	80
+    350 150
+    500 30
+    700 180
+    900 190
+    1350 150
+6 1 800
+7 1 200
+8 3 700 1500 2200

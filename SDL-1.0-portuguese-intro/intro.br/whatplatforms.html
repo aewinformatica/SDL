@@ -1,0 +1,83 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title>SDL: What Platforms Does It Run On?</title>
+</head>
+
+<body bgcolor="#FFF8DC" text="#000000">
+<TABLE>
+<TR><!--#include file="../menu.tmpl" -->
+<TD>
+
+<p align="center">[<a href="author.html">Anterior</a>] <a href="toc.html"><font color="#8B0000">Conteúdo</font>
+</a>[<a href="whatcanitdo.html">Próximo</a>]</p>
+
+<h1><font color="#8B0000">Em que plataformas funciona?</font></h1>
+
+<table border="0" cellpadding="4">
+    <tr>
+        <td valign="top"><strong>Linux</strong><ul>
+            <li>Usa X11 para controle de vídeo, aproveitando as extensões do
+              XFree86 DGA e o novo acelerador MTRR para exibição em tela cheia. </li>
+            <li>Usa a API OSS para som. </li>
+            <li>Instancias são implementadas usando tanto a chamada de sistema
+              clone() e SysV IPC , ou glibc-2.1 pthreads. </li>
+        </ul>
+        </td>
+        <td valign="top" width="200" bgcolor="#D3D3D3"><b>Dica:</b>
+          <p>Você pode entrar em porções escondidas do driver de interface do
+          SDL pela função SDL_GetWMInfo().Isto permite a você fazer coisas como
+          remover decorações de janela e inconificar programadamente sua janela.</p>
+ </td>
+    </tr>
+    <tr>
+        <td valign="top"><strong>Win32</strong><ul>
+            <li>Duas versões, uma segura para todos os sistemas, baseada na API
+              Win32 e outra, de alta performance , baseada na API DirectX. </li>
+            <li>A versão segura usa o GDI para exibições no vídeo.A versão de
+              alta performance usa o DirectDraw para exibição em vídeo, tomando
+              vantagem do aceleração de hardware ,se disponível. </li>
+            <li>Versão segura usa&nbsp; a API WaveOut para som, A versão de alta
+              performance usa DirectSound para playback de áudio </li>
+        </ul>
+        </td>
+        <td valign="top" width="200" bgcolor="#D3D3D3"><b>Dica:</b>
+        <br>
+          Você deve chamar as funções de eventos do SDL&nbsp; periodicamente de
+          sua instancia principal para bombear as mensagens da fila do windows e
+          manter sua aplicação respondendo.
+          <p>&nbsp;</p>
+ </td>
+    </tr>
+    <tr>
+        <td valign="top"><strong>BeOS</strong><ul>
+            <li>BWindow é usada para exibição no vídeo </li>
+            <li>A API BSoundPlayer é usada para sons. </li>
+        </ul>
+        </td>
+        <td valign="top" width="200" bgcolor="#D3D3D3"><b>Dica:</b>
+          <p>Linux e BeOs suportam a flag SDL_INIT_EVENTTHREAD que, quando
+          passada para SDL_Init(), questiona ao evento do loop para funcionar de
+          forma assíncrona em outra instancia.Isto é útil para cursores
+          coloridos que respondem mesmo quando a aplicação esta ocupada.</p>
+ </td>
+    </tr>
+    <tr>
+        <td valign="top"><strong>Traduções não oficiais, traduções em progresso</strong><ul>
+            <li>Solaris, IRIX, FreeBSD </li>
+            <li>MacOS&nbsp; </li>
+            <li>WinCE ,MacOS X, Sega DreamCast (adicionado pelo tradutor) </li>
+        </ul>
+        </td>
+    </tr>
+</table>
+
+<p align="center">[<a href="author.html">Anterior</a>] <a href="toc.html"><font color="#8B0000">Conteúdo</font>
+</a>[<a href="whatcanitdo.html">Próximo</a>]</p>
+
+</TABLE>
+</body>
+</html>

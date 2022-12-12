@@ -1,0 +1,82 @@
+Manual do usuário
+
+1 - Introdução
+
+  Bem-vindo ao Manual do Usuário. Aqui você irá descobrir como jogar SO Bomber e um pouco do que o espera pelas próximas horas. Mas antes uma breve história do panorama atual:
+  No atual mundo capitalista, onde só os mais fortes sobrevivem, você é um poderoso empresário, extremamente influente no mercado, mas com o seu poderoso império ameaçado por uns anarquistas que acham que o mundo está completamente dominado pelo monopolismo. E agora você se vê obrigado a defender tudo que lutou anos para conquistar. Com apenas explosivos você tentará manter seu império a salvo.
+
+2 - Jogo
+  
+2.1 - Entendendo o Jogo
+
+  O jogo consiste de uma personagem que busca abrir caminho por um labirinto enfestado de inimigos. Usando explosivos, tentará se defender e,correndo contra o tempo, chegar ao fim 
+dessa aventura e conseguir manter sua empresa a salvo, derrubando a concorrência.
+
+2.2 - Como Jogar
+
+  Os comandos deste jogo são bem simples:
+
+  * Andar para direita: pressione a seta para direita
+
+  * Andar para esquerda: pressione a seta para esquerda
+
+  * Andar para cima: pressione a seta para cima
+
+  * Andar para baixo: pressione a seta para baixo
+
+  * Soltar bomba: pressione barra de espaço
+
+  * Pausa jogo: pressione ESCAPE(tecla ESC no canto superior a esquerda do teclado)
+
+2.2.1 - Pontos
+
+-->  A pontuação decorre da seginte forma:
+
+  * caixas : 50 pontos
+  * inimigo tipo 1: 100 pontos(referentes a primeira fase)
+  * inimigo tipo 2: 150 pontos(referentes a segunda fase)
+  * inimigo tipo 3: 500 pontos(referentes a terceira fase)
+  * inimigo tipo 4: 750 pontos(referentes a quarta fase)
+  * inimigo tipo 5: 750 pontos(referentes a quinta fase)
+  * inimigo tipo 6: 1000 pontos(referentes a sexta fase)
+  * vida : vira 5000 pontos ao final do jogo
+
+2.2.2 - Vidas
+
+  Cada jogador começará com três vidas. Perderá uma vida se tocar o inimigo ou se estiver dentro do raio de detonação da bomba. Também é possível ganhar vidas, basta, no decorrer do jogo, ganhar x pontos.
+  Ao perder todas as vidas o jogador perderá o jogo, podendo assim reiniciar ou sair.
+
+2.2.3 - Fases
+
+  O jogo é constituído de 5 (cinco) fases. Cada uma delas tem um labirinto diferente e seu próprio nível de dificuldade. Cabe ao jogador elevar seu espírito de aventura ao máximo e desbravar essa eletrizante aventura.
+
+2.2.4 - Ganhando o Jogo
+  
+ --> O jogo será dado como ganho quando o jogador conseguir passar pelas sete fases, vencendo todos os inimigos e destruíndo todos os obstáculos.
+
+2.3 - Salvando o Jogo
+
+  Para salvar o jogo basta entrar na função PAUSA clicando no botão ESCAPE(no canto superior esquerdo do teclado, ESC). Lá encontrará cinco opções: 
+  
+  * Continuar
+  * Salvar
+  * Reiniciar
+  * Menu
+  * Sair
+
+Ao selecionar a opção Salvar, o último jogo será salvo com todas as suas informações e em seguida voltará para o Menu.
+  Para reiniciar o jogo salvo basta clicar em Recarregar no Menu e, em seguida, selecionar o jogo desejado.
+
+2.4 - Recordes
+
+  Ao final do jogo, o jogador será colocado em uma lista de recordistas caso tenha conseguido atingir uma das cinco melhores marcas dentre todos os jogadores.
+  Há duas categorias de recordistas:
+
+  * Tempo - os jogadores que obtiverem os melhores tempos.
+
+  * Pontos - Os jogadores que obtiverem as maiores pontuações.
+
+
+  Chegamos ao final do Manual do Usuário. Esperamos que não tenha ficado nenhuma dúvida.
+
+                                       DIVIRTA-SE	                             

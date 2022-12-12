@@ -1,0 +1,216 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title>Using SDL: Video</title>
+</head>
+
+<body bgcolor="#FFF8DC" text="#000000">
+<TABLE>
+<TR><!--#include file="../menu.tmpl" -->
+<TD>
+
+<p align="center">
+[<a href="usinginit.html">Anterior</a>]
+<a href="toc.html"><font color="#8B0000">Conteúdo</font> </a>
+[<a href="usingevents.html">Próximo</a>]
+</p>
+
+<h1><font color="#8B0000">Usando a API Simple DirectMedia Layer&nbsp;</font></h1>
+
+<h2>Vídeo</h2>
+
+<table border="0" cellpadding="4">
+    <tr>
+        <td valign="top"><ul>
+            <li><font size="3"><strong>Escolhendo e ajustando o modo de tela</strong>
+              (o jeito fácil)</font><blockquote>
+                    <p>Você simplesmente escolhe sua profundidade- de- bits (bits-por-ponto) e
+                    resolução favorita e ajusta!</p>
+                </blockquote>
+            </li>
+        </ul>
+        </td>
+        <td valign="top" width="300" bgcolor="#D3D3D3"><b>Dica #1:</b>
+          <p>&nbsp;Você pode encontrar a profundidade de vídeo mais rápida suportada pelo hardware com a
+          função SDL_GetVideoInfo().</p>
+          <p><b>Dica #2:</b> <br>
+          Você pode obter uma lista de resoluções de vídeo em uma
+          profundidade-de-bits em&nbsp; particular suportadas usando a função
+          SDL_ListModes(). </p>
+        </td>
+    </tr>
+</table>
+
+<table border="0" cellpadding="50">
+    <tr>
+        <td valign="top"><font color="#000080"><strong>Exemplo</strong></font><strong>:</strong><pre>
+{ SDL_Surface *screen;
+
+    screen = SDL_SetVideoMode(640, 480, 16, SDL_SWSURFACE);
+    <font color="#0000FF">if</font> ( screen == NULL ) {
+        fprintf(stderr, &quot;<font color="#000000">Impossível ajustar ao vídeo em  640x480 : %s\n</font>&quot;, SDL_GetError());
+        exit(1);
+    }
+}
+</pre>
+        </td>
+    </tr>
+</table>
+
+<table border="0" cellpadding="4">
+    <tr>
+        <td valign="top"><ul>
+            <li><strong>Desenhando pixels na tela</strong> <blockquote>
+                    <p>Para desenhar na tela , escreve-se diretamente no
+                    framebuffer (que armazena cada tela antes de sua exibição)
+                    gráfico e chamando a função de atualização da tela</p>
+                </blockquote>
+            </li>
+        </ul>
+        </td>
+        <td valign="top" width="300" bgcolor="#D3D3D3"><b>Dica:</b>
+          <p>Se você sabe que ira desenhar muito na tela, é melhor trancar a
+          tela ( se necessário) antes de desenhar, desenhar enquanto mantém uma
+          lista de áreas necessária de se atualizar, e destrancar a tela
+          novamente antes de atualiza-la.</p>
+ </td>
+    </tr>
+</table>
+
+<table border="0" cellpadding="50">
+    <tr>
+        <td><font color="#000080"><strong>Exemplo</strong></font><strong>:</strong>
+          <p>Desenhando um pixel em uma tela de formato arbitrário</p>
+        <pre>
+<font color="#008000">void</font> DrawPixel(SDL_Surface *screen, <font
+color="#008000">Uint8</font> R, <font color="#008000">Uint8</font> G, <font
+color="#008000">Uint8</font> B)
+{
+    <font color="#008000">Uint32</font> color = SDL_MapRGB(screen-&gt;format, R, G, B);
+
+    <font color="#0000FF">if</font> ( SDL_MUSTLOCK(screen) ) {
+        <font color="#0000FF">if</font> ( SDL_LockSurface(screen) &lt; 0 ) {
+            return;
+        }
+    }
+    <font color="#0000FF">switch</font> (screen-&gt;format-&gt;BytesPerPixel) {
+        <font color="#0000FF">case</font> 1: { <font
+color="#FF0000">/* Assumindo 8-bpp */</font>
+            <font color="#008000">Uint8 *</font>bufp;
+
+            bufp = (<font color="#008000">Uint8 *</font>)screen-&gt;pixels + y*screen-&gt;pitch + x;
+            *bufp = color;
+        }
+        break;
+
+        <font color="#0000FF">case</font> 2: { <font
+color="#FF0000">/* Provavelmente 15-bpp ou 16-bpp */</font>
+            <font color="#008000">Uint16 *</font>bufp;
+
+            bufp = (<font color="#008000">Uint16 *</font>)screen-&gt;pixels + y*screen-&gt;pitch/2 + x;
+            *bufp = color;
+        }
+        break;
+
+        <font color="#0000FF">case</font> 3: { <font
+color="#FF0000">/* mode 24-bpp lento,normalmente não usado */</font>
+            <font color="#008000">Uint8 *</font>bufp;
+
+            bufp = (<font color="#008000">Uint8 *</font>)screen-&gt;pixels + y*screen-&gt;pitch + x;
+            *(bufp+screen-&gt;format-&gt;Rshift/8) = R;
+            *(bufp+screen-&gt;format-&gt;Gshift/8) = G;
+            *(bufp+screen-&gt;format-&gt;Bshift/8) = B;
+        }
+        break;
+
+        <font color="#0000FF">case</font> 4: { <font
+color="#FF0000">/* Provavelmente 32-bpp */</font>
+            <font color="#008000">Uint32 *</font>bufp;
+
+            bufp = (<font color="#008000">Uint32 *</font>)screen-&gt;pixels + y*screen-&gt;pitch/4 + x;
+            *bufp = color;
+        }
+        break;
+    }
+    <font color="#0000FF">if</font> ( SDL_MUSTLOCK(screen) ) {
+        SDL_UnlockSurface(screen);
+    }
+    SDL_UpdateRect(screen, x, y, 1, 1);
+}
+</pre>
+        </td>
+    </tr>
+</table>
+
+<table border="0" cellpadding="4">
+    <tr>
+        <td valign="top"><ul>
+            <li><strong>Carregando e exibindo imagens na tela</strong> <blockquote>
+                    <p>SDL prove uma única rotina de carregamento de imagens
+                    para sua conveniência,SDL_LoadBMP().Uma biblioteca para
+                    carregamento de imagens pode ser encontrado no arquivo de
+                    demos do SDL. </p>
+                    <p>Você pode exibir imagens usando SDL_BlitSurface() para
+                    copia-las no framebuffer gráfico. SDL_BlitSurface()
+                    automaticamente delimita a área copiada, que deve ser
+                    passado para SDL_UpdateRects() para atualizar a porção da
+                    tela que foi modificada.</p>
+                </blockquote>
+            </li>
+        </ul>
+        </td>
+        <td valign="top" width="300" bgcolor="#D3D3D3"><b>Dica #1:</b>
+          <p>Se você esta carregando uma imagem para ser exibida muitas vezes,você
+          pode melhorar a velocidade de copia,convertendo-a para o formato da
+          tela. a função SDL_DisplayFormat() faz esta convenção para você.</p>
+          <p><b>Dica #2:</b> </p>
+          <p>Muitas sprites tem fundo transparente.Você pode habilitar copias
+          transparentes (copias em colorkey) com a função SDL_SetColorKey(). </p>
+        </td>
+    </tr>
+</table>
+
+<table border="0" cellpadding="50">
+    <tr>
+        <td><font color="#000080"><strong>Exemplo</strong></font><strong>:</strong>
+        <pre>
+<font color="#008000">void</font> ShowBMP(<font color="#008000">char *</font>file, SDL_Surface *screen, <font
+color="#008000">int</font> x, <font color="#008000">int</font> y)
+{
+    SDL_Surface *image;
+    SDL_Rect dest;
+
+<font color="#FF0000">/* carrega o arquivo BMP na superfície */</font>
+    image = SDL_LoadBMP(file);
+    <font color="#0000FF">if</font> ( image == NULL ) {
+        fprintf(stderr, &quot;<font color="#000000">Não foi possível carregar o arquivo %s: %s\n</font>&quot;, file, SDL_GetError());
+        return;
+    }
+
+<font color="#FF0000">/* Copia na superfície da tela. A superfície não pode estar trancada neste ponto. */</font></pre>
+        <pre>    dest.x = x;
+    dest.y = y;
+    dest.w = image-&gt;w;
+    dest.h = image-&gt;h;
+    SDL_BlitSurface(image, NULL, screen, &amp;dest);
+
+<font color="#FF0000">/* Atualiza a porção modificada da tela */</font>
+    SDL_UpdateRects(screen, 1, &amp;dest);
+}
+</pre>
+        </td>
+    </tr>
+</table>
+
+<p align="center">
+[<a href="usinginit.html">Anterior</a>]
+<a href="toc.html"><font color="#8B0000">Conteúdo</font> </a>
+[<a href="usingevents.html">Próximo</a>]
+</p>
+
+</TABLE>
+</body>
+</html>

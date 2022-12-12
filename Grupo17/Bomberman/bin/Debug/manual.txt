@@ -1,0 +1,24 @@
+	MANUAL DO USUÁRIO
+	BOMBER MAN
+	
+	Instalar:	
+	Copie a pasta do jogo "Bomberman" para o seu computador.
+
+	Executar:
+	Clique duas vezes no arquivo "jogo.exe".
+
+	Como jogar:No menu escolha a sua fase e selecione a opção começar.
+	Objetivo:
+	Achar a saída para as próximas fases(ao todo 4), através da destruição de blocos e inimigos,
+	arrecadando assim o máximo de pontos. 
+
+	Controles:
+	[setas] Movimentam o bomberman
+	[Espaço] Emplanta a bomba
+	[esc] pausa o jogo
+	[fechar] fecha o jogo em qualquer momento
+
+	Pontuação:
+	Destruindo os blocos ganha 10 pontos, achanda a saida 100 pontos, mudando de fase 1000 e 
+	matando cada inimigo 100 pontos, caso o bomberman morra perde 100 pontos no placar. São ao todo 
+	3 vidas.

@@ -1,0 +1,76 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title>Using SDL: Intialization</title>
+</head>
+
+<body bgcolor="#FFF8DC" text="#000000">
+<TABLE>
+<TR><!--#include file="../menu.tmpl" -->
+<TD>
+
+<p align="center">
+[<a href="whatplatforms.html">Anterior</a>] <a href="toc.html"><font color="#8B0000">Conteúdo</font>
+</a>[<a href="usingvideo.html">Próximo</a>]
+</p>
+
+<h1><font color="#8B0000">Usando a API Simple DirectMedia Layer</font></h1>
+
+<h2>Inicializando a biblioteca </h2>
+
+<table border="0" cellpadding="4">
+    <tr>
+        <td valign="top"><blockquote>
+            <p>Use SDL_Init() para carregar dinamicamente e inicializar a
+            biblioteca.Esta função pega o conjunto de flags correspondentes a porções
+            que você deseja ativar: </p>
+            <dl>
+                <dd>SDL_INIT_AUDIO </dd>
+                <dd>SDL_INIT_VIDEO </dd>
+                <dd>SDL_INIT_CDROM </dd>
+                <dd>SDL_INIT_TIMER </dd>
+            </dl>
+            <p>Use SDL_Quit() para limpar a biblioteca quando você terminar com
+            ela.</p>
+        </blockquote>
+        </td>
+        <td valign="top" width="200" bgcolor="#D3D3D3"><b>Dica:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          SDL carrega dinamicamente a biblioteca das locações das bibliotecas de
+          sistemas padrão.Use a função SDL_SetLibraryPath() para especificar locações
+          alternativas para as bibliotecas dinâmicas distribuídas com
+          sua aplicação </td>
+    </tr>
+</table>
+
+<table border="0" cellpadding="50">
+    <tr>
+        <td><font color="#000080"><strong>Exemplo</strong></font>:<pre>
+<font color="#0000FF">#include</font> &lt;stdlib.h&gt;
+<font color="#0000FF">#include</font> &quot;<font color="#000000">SDL.h</font>&quot;
+
+main(<font color="#008000">int</font> argc, <font color="#008000">char *</font>argv[])
+{
+    <font color="#0000FF">if</font> ( SDL_Init(SDL_INIT_AUDIO|SDL_INIT_VIDEO) &lt; 0 ) {
+        fprintf(stderr, &quot;não foi possível inicializar SDL<font color="#000000">: %s\n</font>&quot;, SDL_GetError());
+        exit(1);
+    }
+    atexit(SDL_Quit);
+
+    ...
+}
+</pre>
+        </td>
+    </tr>
+</table>
+
+<p align="center">
+[<a href="whatplatforms.html">Anterior</a>] <a href="toc.html"><font color="#8B0000">Conteúdo</font>
+</a>[<a href="usingvideo.html">Próximo</a>]
+</p>
+
+</TABLE>
+</body>
+</html>

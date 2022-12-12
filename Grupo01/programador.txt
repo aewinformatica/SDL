@@ -1,0 +1,24 @@
+Manual do Progamador
+
+1 - A Ideia
+
+  A ideia central foi desenvolver um  bom jogo, bem estruturado, com um bom
+visual e não muito pesado para que possa rodar bem em qualquer maquina sem 
+apresentar problemas. Alem disso o BOMBER SO e de facil inicializacao bastantando
+apenas clicar no executavel com o nome BOMBER_SO.EXE
+
+2 - O Desenvolvimento
+
+  Inicialmente, o projeto foi desenvolvido de modo grafico para se atingir a
+melhor estrutura visual e funcional de modo que o proprio jogo seja auto esplicativo,
+tornando-se assim, mais confortavel ao jogador.
+
+3 - Criacao dos Personagens
+
+  A maioria dos personagens foram feitos manualmente pois desta forma 
+btivemos, de fato, o efeito desejado (humor).  
+
+4 - O Codigo
+  Todo o codigo foi separado em arquivos com semlhantes funcões na execucão 
+do programa de modo a tornar o acessso e a correcão dos erros no desenvolvimento
+do algoritmo mais facil sem deteriorar o resto do programa.

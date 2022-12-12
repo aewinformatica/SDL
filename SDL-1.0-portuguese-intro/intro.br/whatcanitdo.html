@@ -1,0 +1,133 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title>SDL: What Can It Do?</title>
+</head>
+
+<body bgcolor="#FFF8DC" text="#000000">
+<TABLE>
+<TR><!--#include file="../menu.tmpl" -->
+<TD>
+
+<p align="center">[<a href="usinginit.html">Anterior</a>] <a href="toc.html"><font color="#8B0000">Conteúdo</font>
+</a>[<a href="usingevents.html">Próximo</a>]</p>
+
+<h1><font color="#8B0000">O que pode fazer?</font></h1>
+
+<table border="0" cellpadding="4">
+    <tr>
+        <td><strong>Vídeo</strong><ul>
+            <li>Ajustar modos de tela em qualquer profundidade (8-bpp ou maior)
+              com conversão opcional, se o modo de tela não é suportado por
+              hardware. </li>
+            <li>Escreve diretamente para framebuffer gráfico linear. </li>
+            <li>Cria superfícies com os atributos de colorkeys ou misturas-alpha. </li>
+            <li>Copias de superfícies são convertidos automaticamente para o
+              formato da superficie-alvo usando otimizadores de copias e são aceleradas por hardware, quando
+              possível. Otimizadores de copia
+              MMX são disponíveis para a linha de processadores x86. </li>
+            <li>copias aceleradas por hardware e operações de preenchimento são
+              usadas se suportadas pelo hardware. </li>
+        </ul>
+        </td>
+        <td valign="top" width="200" bgcolor="#D3D3D3"><b>Dica:</b>
+        <br>
+          Você pode ajustar a barra de titulo (se existir) e o ícone usando as
+          funções SDL_WM_SetCaption() e SDL_WM_SetIcon() respectivamente.&nbsp; </td>
+    </tr>
+    <tr>
+        <td valign="top"><strong>Eventos</strong><ul>
+            <li>São disponíveis eventos&nbsp; para: <ul>
+                    <li>mudanças na visibilidade da aplicação </li>
+                    <li>entrada pelo teclado </li>
+                    <li>entrada pelo mouse </li>
+                    <li>Pedido de saída do usuário. </li>
+                </ul>
+            </li>
+            <li>Cada evento pode ser habilitado ou desabilitado com
+              SDL_EventState().</li>
+            <li>Eventos são passados através um filtro especificado pelo usuário
+              antes de serem postados na fila de eventos internos. </li>
+            <li>Fila de eventos a prova de instancias </li>
+        </ul>
+        </td>
+        <td valign="top" width="200" bgcolor="#D3D3D3"><b>Dica:</b>
+        <br>
+          Use SDL_PeepEvents() para procurar por um evento de um tipo particular
+          na fila de eventos. </td>
+    </tr>
+    <tr>
+        <td valign="top"><strong>Áudio</strong><ul>
+            <li>Ajuste o playback de áudio em 8-bit e 16-bit, em mono ou stereo,
+              com conversão opcional se o formato não é suportado pelo
+              hardware. </li>
+            <li>Áudio funciona independentemente em uma instancia separada,
+              preenchida pelo mecanismo de callback do usuário. </li>
+            <li>Desenhado para&nbsp; usar softwares de mixagem de áudio personalizados, mas o exemplo em arquivo contem uma biblioteca de
+              saída de áudio e musica. </li>
+        </ul>
+        </td>
+        <td valign="top" width="200" bgcolor="#D3D3D3"><b>Dica:</b>
+        <br>
+          Use as funções SDL_LockAudio() e SDL_UnlockAudio() para sincronizar
+          acesso a dados compartilhados pelo callback de áudio e o resto do
+          programa </td>
+    </tr>
+    <tr>
+        <td valign="top"><strong>áudio em CD-ROM</strong><ul>
+            <li>API de controle de CD de áudio Completa </li>
+        </ul>
+        </td>
+        <td valign="top" width="200" bgcolor="#D3D3D3"><b>Dica:</b>
+        <br>
+          Se você passar uma alça de CD-ROM nula&nbsp; (NULL) para as funções
+          da
+          API de CD-ROM,elas vão&nbsp; atuar no ultimo CD-ROM que foi aberto. </td>
+    </tr>
+    <tr>
+        <td valign="top"><strong>Instancias</strong><ul>
+            <li>API Simples,para a criação de instancias </li>
+            <li>Semáforos binários simples para sincronização </li>
+        </ul>
+        </td>
+        <td valign="top" width="200" bgcolor="#D3D3D3"><b>Dica:</b>
+        <br>
+          Se possível, não use bibliotecas de função como I/O e administração
+          de memória do C ,dentro de uma instancia-elas podem trancar recursos
+          usados por outras instancias. </td>
+    </tr>
+    <tr>
+        <td valign="top"><strong>Timers</strong><ul>
+            <li>Obtêm quantos milisegundos se passaram </li>
+            <li>Espera uma quantidade de milisegundos especificada </li>
+            <li>Ajusta um único timer periódico com resolução de 10ms. </li>
+        </ul>
+        </td>
+        <td valign="top" width="200" bgcolor="#D3D3D3"><b>Dica:</b>
+        <br>
+          Você pode facilmente substituir o GetTickCount() da plataforma
+          Win32&nbsp; pelo SDL_GetTicks() </td>
+    </tr>
+    <tr>
+        <td><strong>Independência na ordenação da memória</strong><ul>
+            <li>Detecta a ordenação da memória do sistema atual </li>
+            <li>Rotina para a rápida inversão de valores de dados </li>
+            <li>Lê e escreve dados de uma ordenação especifica </li>
+        </ul>
+        </td>
+        <td valign="top" width="200" bgcolor="#D3D3D3"><b>Dica:</b>
+        <br>
+          Quando você estiver lendo dados ,de arquivos , você pode precisar
+          inverter bytes de gráficos em 16-bit </td>
+    </tr>
+</table>
+
+<p align="center">[<a href="usinginit.html">Anterior</a>] <a href="toc.html"><font color="#8B0000">Conteúdo</font>
+</a>[<a href="usingevents.html">Próximo</a>]
+
+</TABLE>
+</body>
+</html>

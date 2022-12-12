@@ -1,0 +1,101 @@
+
+/*
+	Arquivo: ex2.c
+	Autor: Bruno Bottino Ferreira
+
+	Exemplifica transparências
+*/
+
+#include <SDL.h> //usaremos funcoes da SDL
+#include <SDL_image.h> //e SDL_image
+
+#define SCREEN_W 640 //tamanho da janela que sera criada
+#define SCREEN_H 480
+
+SDL_Surface* my_surfbmp; //superficie que sera carregada de um BMP
+SDL_Surface* my_surfpng; //superficie que sera carregada de um PNG
+SDL_Surface* my_surfalpha; //superficie que tera transparencia alpha geral
+
+SDL_Rect dst_rectbmp = {70, 30, 0, 0}; //destino do blit da superficie BMP (w, h sao ignorados)
+SDL_Rect dst_rectpng = {250, 100, 0, 0}; //destino do blit da superficie BMP (w, h sao ignorados)
+SDL_Rect dst_rectalpha = {250, 250, 0, 0}; //destino do blit da superficie com alpha (w, h sao ignorados)
+
+int incx1 = 1, incy1 = 1;
+int incx2 = 1, incy2 = -1;
+int incx3 = -1, incy3 = 1;
+
+
+void update_positions(int max_w, int max_h)
+{
+	
+	//atualizar a superficie BMP
+	dst_rectbmp.x += incx1;
+	dst_rectbmp.y += incy1;
+	if((dst_rectbmp.x > (max_w - my_surfbmp->w)) || (dst_rectbmp.x < 0)) incx1 = -incx1;
+	if((dst_rectbmp.y > (max_h - my_surfbmp->h)) || (dst_rectbmp.y < 0)) incy1 = -incy1;
+
+	//atualizar a superficie PNG
+	dst_rectpng.x += incx2;
+	dst_rectpng.y += incy2;
+	if((dst_rectpng.x > (max_w - my_surfpng->w)) || (dst_rectpng.x < 0)) incx2 = -incx2;
+	if((dst_rectpng.y > (max_h - my_surfpng->h)) || (dst_rectpng.y < 0)) incy2 = -incy2;
+
+	//atualizar a superficie com alpha
+	dst_rectalpha.x += incx3;
+	dst_rectalpha.y += incy3;
+	if((dst_rectalpha.x > (max_w - my_surfalpha->w)) || (dst_rectalpha.x < 0)) incx3 = -incx3;
+	if((dst_rectalpha.y > (max_h - my_surfalpha->h)) || (dst_rectalpha.y < 0)) incy3 = -incy3;
+}
+
+int main(int argc, char** argv) //funcao de entrada
+{
+    SDL_Surface* screen; //superficie que representa a tela do computador
+    SDL_Event event; //um evento enviado pela SDL
+    int quit = 0; //devemos encerrar o programa?    
+	//SDL_Color cor_fundo;
+	Uint32 cor_fundo;
+
+    SDL_Init(SDL_INIT_VIDEO); //inicializar a SDL
+    screen = SDL_SetVideoMode(SCREEN_W, SCREEN_H, 16, SDL_SWSURFACE); //criar uma janela 640x480x16bits
+	
+	//carregar as imagens
+	my_surfbmp = SDL_LoadBMP("pic3.bmp"); //quadro rosa, transparencia sera setada
+	my_surfpng = IMG_Load("pic4.png"); //quadro cinza, transparencia guardada no arquivo
+	my_surfalpha = IMG_Load("pic5.gif"); //computador, transparencia guardada no arquivo + geral sera setada
+
+	//setar a transparência do arquivo carregado do BMP
+	SDL_SetColorKey(my_surfbmp, SDL_SRCCOLORKEY, SDL_MapRGB(my_surfbmp->format, 255, 0, 255));
+
+	//setar a transparência geral da superficie alpha
+	SDL_SetAlpha(my_surfalpha, SDL_SRCALPHA, 128);
+	
+	// preparar uma cor para o fundo
+	cor_fundo = SDL_MapRGB(screen->format, 5, 50, 100);
+
+    while(!quit) //rodar enquanto nao for para encerrar :)
+    {
+		while(SDL_PollEvent(&event)) //checar eventos
+		{
+			if(event.type == SDL_QUIT) //fechar a janela?
+			{
+				quit = 1; //sair do loop principal
+			}
+		}
+		//pequena animacao
+		update_positions(SCREEN_W, SCREEN_H);
+
+		//limpar a tela
+		SDL_FillRect(screen, NULL, cor_fundo);
+
+		//copiar as imagens
+		SDL_BlitSurface(my_surfbmp, NULL, screen, &dst_rectbmp);
+		SDL_BlitSurface(my_surfpng, NULL, screen, &dst_rectpng);
+		SDL_BlitSurface(my_surfalpha, NULL, screen, &dst_rectalpha);
+
+		SDL_Flip(screen); //atualizar a tela
+	}
+
+    SDL_Quit(); //encerrar a SDL
+
+    return 0;
+}

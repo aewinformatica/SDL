@@ -1,0 +1,49 @@
+###############
+
+BOMBER KART v0.9
+
+###############
+
+
+SOBRE O PROJETO
+
+O projeto foi desenvolvido em linguagem C com auxilio da biblioteca gráfica SDL.
+
+***
+
+SOBRE OS ARQUIVOS
+
+main.c - arquivo principal onde está a função main() que chama as demais funções do jogo
+
+abertura.c - aquivo que contem as funçoes de abertura, menu, recordes, créditos e opções. Além de algumas subfunções.
+
+fases.c - contém a função fases() que chama todas as funções necessárias para criação e execução de uma fase no jogo
+
+funcoesFases.c - contém as funções de movimento, colisão, explosão, timer, etc... 
+
+sorteiaFase.c - função para criação de uma nova fase com sorteio de inimigos e temas de fundo.
+
+recordes.c - organiza e verifica se a pontução feita é um novo recorde.
+
+***
+
+
+COMPILANDO
+
+para compilar leia README.TXT
+
+
+***
+
+FUNCIONAMENTO BÁSICO
+
+- Executa arquivo
+- Chama função abertura()
+- chama função menu()
+    - Novo Jogo - chama a função fases() com as váriaveis globais inimigos=5, vidas = 3, pontos = 5;
+    - Recordes - função recordes()
+    - Opções - função opcoes()
+    - creditos - função creditos()
+    - sair / ESC / fechar janela - função ConfirmaSaida()
+
+

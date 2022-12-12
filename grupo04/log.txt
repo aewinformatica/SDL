@@ -1,0 +1,16 @@
+V.A.D. - Arquivo Log iniciado.
+Sat Jun 04 22:57:27 2016
+
+
+SDL inicializado com sucesso.
+Vídeo inicializado com sucesso.
+Áudio inicializado com sucesso.
+Sons carregados.
+Imagens carregadas.
+NFont inicializado com sucesso.
+Entrando no loop principal do SDL.
+Comando "sair" recebido.
+SDL finalizado.
+
+Log fechado.
+Sat Jun 04 23:00:22 2016

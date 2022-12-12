@@ -1,0 +1,47 @@
++#############################################################################################################+
+| G9 Apresenta:                                                                                               |
++=============================================================================================================+
+|                                   ### DONUT'S INVASION v1.0 ###                                             |
++=============================================================================================================+
+|                                       MANUAL DO PROGRAMADOR                                                 |
++-------------------------------------------------------------------------------------------------------------+
+| -Sobre o projeto:                                                                                           |
+|                                                                                                             |
+| O projeto foi desenvolvido em linguagem C, com o editor de textos Notepad++ e com auxílio da biblioteca     |
+|gráfica SDL.                                                                                                 |
+|                                                                                                             |
+|                                                                                                             |
+| -Sobre os arquivos:                                                                                         |
+|                                                                                                             |
+| main.c - É onde estão TODAS as linhas de comando do jogo.                                                   |
+|                                                                                                             |
+|                                                                                                             |
+| -Compilar:                                                                                                  |
+|                                                                                                             |
+| Leia o ReadMe.txt.                                                                                          |
+|                                                                                                             |
+|                                                                                                             |
+| -Funcionamento Básico:                                                                                      |
+|                                                                                                             |
+| . Executando o programa, é chamada a função Intro para realizar a parte de introdução do jogo               |
+| . Após isso, entra a Main que chama MenuLoop e aguarda a próxima ação do usuário                            |
+| . Dentro do jogo, o usuário conta com vários leveis de dificuldade administrados por constante e            |
+|multiplicadores de dificuldade                                                                               |
+| . Após perder 3 vidas, é chamado a função GameOver que mostra a tela de fim de jogo                         |
+| . Se o usuário conseguiu pontuação satisfatória durante o jogo, a função " record " será chamada requerendo |
+|que o jogador digite seu nome para entrar em sua devida posição na grade de pontuação                        |
+|                                                                                                             |
+| . Mais informações sobre as funções utilizadas da main.c, olhe a parte /*------ PROTOTYPES ------*/.        |
+|                                                                                                             |
+|                                                                                                             |
+|                                                                                                             |
+| -Créditos aos Desenvolvedores (Grupo 09):                                                                   |
+|                                                                                                             |
+| . Luís Fernando Magalhães Novaes                                                                            |
+| . Matheus Ribeiro Motta de Almeida                                                                          |
+| . Victor Landeira                                                                                           |
+|                                                                                                             |
+|                                                                                                             |
++-------------------------------------------------------------------------------------------------------------+
+|                              *** G9 Todos os Direitos Reservados ***                                        |
++=============================================================================================================+

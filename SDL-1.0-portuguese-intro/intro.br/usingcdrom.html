@@ -1,0 +1,133 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title>Using SDL: the CD-ROM</title>
+</head>
+
+<body bgcolor="#FFF8DC" text="#000000">
+<TABLE>
+<TR><!--#include file="../menu.tmpl" -->
+<TD>
+
+<p align="center">
+[<a href="usingsound.html">anterior</a>] <a href="toc.html"><font color="#8B0000">Conteúdo</font>
+</a>[<a href="usingthreads.html">próxima</a>]
+</p>
+
+<h1><font color="#8B0000">Usando a API Simple DirectMedia Layer</font></h1>
+
+<h2>CD-ROM áudio </h2>
+
+<table border="0" cellpadding="4">
+    <tr>
+        <td valign="top"><ul>
+            <li><strong>Abrindo o drive de CD-ROM para uso:</strong> </li>
+        </ul>
+        <blockquote>
+            <p>Você pode descobrir quantos drives de CD-ROM existem no sistema com a
+            função SDL_CDNumDrives() , e escolher um para usar com
+            SDL_CDOpen() </p>
+            <p>O drive de CD-ROM padrão do sistema é o 0 .O drive de CD-ROM
+            deve ser aberto antes do uso, mesmo que não haja disco no drive. </p>
+            <p>Você deve usar a função SDL_CDStatus para determinar o estado do
+            drive.Depois que terminar de usar o drive de CD-ROM, você deve
+            fecha-lo com a função SDL_CDClose(). </p>
+        </blockquote>
+        </td>
+        <td valign="top" width="200" bgcolor="#D3D3D3"><strong>Dica:</strong><br>
+          Você pode obter o nome do drive no sistema usando a função SDL_CDName() </td>
+    </tr>
+</table>
+
+<table border="0" cellpadding="50">
+    <tr>
+        <td valign="top"><font color="#000080"><strong>Exemplo</strong></font><strong>:
+        </strong><pre>
+{
+    SDL_CD *cdrom;
+
+    <font color="#0000FF">if</font> ( SDL_CDNumDrives() &gt; 0 ) {
+        cdrom = SDL_CDOpen(0);
+        <font color="#0000FF">if</font> ( cdrom == NULL ) {
+            fprintf(stderr, &quot;<font color="#000000">Não foi possível abrir CD-ROM padrão: %s\n</font>&quot; SDL_GetError());
+            return;
+        }
+
+        ...
+
+        SDL_CDClose(cdrom);
+    }
+}
+</pre>
+        </td>
+    </tr>
+</table>
+
+<table border="0" cellpadding="4">
+    <tr>
+        <td valign="top"><ul>
+            <li><strong>executando o&nbsp; CD-ROM </strong></li>
+        </ul>
+        <blockquote>
+            <p>Drives de CD-Rom especificam tempo tanto no formato MSF (mins/secs/frames)
+            ou diretamente em frames. Uma frame é uma unidade padrão de tempo
+            no CD, correspondendo a 1/75 de um segundo. SDL usa frames ao invés
+            do formato MSF ,quando especifica&nbsp; a duração de faixas e deslocamentos, mas
+            você pode converte-los usando as macros
+            FRAMES_TO_MSF() e MSF_TO_FRAMES(). </p>
+            <p>SDL não atualiza a&nbsp; informação de faixa na estrutura SDL_CD
+            até você chamar SDL_CDStatus(), então você deve sempre usar
+            SDL_CDStatus() para ter certeza que ha um CD no drive e para
+            determinar que faixas estão disponíveis antes de executa-lo.Vale
+            lembrar que na numeração de faixas, a primeira tem o numero 0. </p>
+            <p>SDL&nbsp; possui duas funções para executar o CD-ROM. Você pode
+            tanto executar faixas especificas usando SDL_CDPlayTracks(), ou você
+            pode executar pelo deslocamento absoluto de frames ,usando
+            SDL_CDPlay().&nbsp; </p>
+            <p>SDL não prove notificação automática de inserção de CD ou de fim
+            do CD.Para detectar estas condições, você precisa periodicamente,
+            consultar o status do drive com SDL_CDStatus().Partindo do principio
+            de que esta chamada lê todo o conteúdo do CD, ela não&nbsp; deve ser
+            chamada em um loop muito&nbsp; apertado (de modo a não ocupar o
+            sistema permanentemente). </p>
+        </blockquote>
+        </td>
+        <td valign="top" width="200" bgcolor="#D3D3D3"><strong>Dica:</strong><br>
+          <p>Você pode determinar quais&nbsp; faixas são faixas de áudio e quais
+          são de dados somente por olhar em cd-rom-&gt;tracks[track].type e
+          comparar este membro de dados com as flags SDL_AUDIO_TRACK e
+          SDL_DATA_TRACK.</p>
+ </td>
+    </tr>
+</table>
+
+<table border="0" cellpadding="50">
+    <tr>
+        <td valign="top"><font color="#000080"><strong>Exemplo</strong></font><strong>:
+        </strong><pre>
+<font color="#008000">void</font> PlayTrack(SDL_CD *cdrom, <font
+color="#008000">int</font> track)
+{
+    <font color="#0000FF">if</font> ( CD_INDRIVE(SDL_CDStatus(cdrom)) ) {
+        SDL_CDPlayTracks(cdrom, track, 0, track+1, 0);
+    }
+    <font color="#0000FF">while</font> ( SDL_CDStatus(cdrom) == CD_PLAYING ) {
+        SDL_Delay(1000);
+    }
+}
+</pre>
+        </td>
+    </tr>
+</table>
+
+<p align="center">
+[<a href="usingsound.html">anterior</a>] <a href="toc.html"><font color="#8B0000">Conteúdo</font>
+</a>[<a href="usingthreads.html">próxima</a>]
+</p>
+
+</TABLE>
+</body>
+</html>
